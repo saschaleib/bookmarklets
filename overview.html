@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sascha’s Bookmarklets: Overview</title>
+		<style>
+			a.dragnolink {
+				display:	inline-block;
+				cursor: move;
+				color:	#333;
+				background-color:	#EEE;
+				border:	#999 solid 1px;
+				padding:	4px 4px 2px 18px;
+				border-radius: 5px;
+				text-decoration:	none;
+				margin-top:	4px;
+				background-repeat: no-repeat;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iL1VzZXJzL3Nhc2NoYS9Eb3dubG9hZHMvYm9va21hcmtzLnBuZyIvPgogPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/Pu7pANwAAAGGaUNDUHNSR0IgSUVDNjE5NjYtMi4xAAAokXWRv0tCURTHP2pllOGQQ0OBQziERVlIbf0g+oGIWIFWi778EWg93lMiGhtaHRr6QUsRLc21Rf9AEATVFEFrNBS0hLzO1cCIPJd77+d+7znn3nsu2GM5LW829EN+rWBEp8a9sfii1/lME248dOFLaKY+FomEqGuf99jUfNerctX3+9daV1KmBrZm4VFNNwrC08LhjYKueE/Yo2UTK8Lnwn5DLij8qPRklV8VZypsVzk9xnx0Qtgj7M384uQv1rJGXnhIuDufK2o/91EvcaXWFuaULr0TkyhTjONlhkkmCDLAiIxBegnQJyvqxAcq8WHWJVaTUWcTg1UyZCngF7Uo2VMyp0VPScuJh5j6g7+1NdODgeoJrllofLGsjx5wHkJ5x7K+ji2rfAIOqcv1bi1+fReG30Qv1bTuI3Bvw8VVTUuewmUJOp70hJGoSA7p9nQa3s+gLQ7tt9CyVK3bzz4nDzC/BaEb2D8An/i7l78BIGhnRgyurdsAAAAJcEhZcwAACxMAAAsTAQCanBgAAACfSURBVDiN3Y5BCsIwEEWfQRDRa+QcoltPkI25h3iR7HuvQhe9QehMW0g3CqWtENqN+GEW8/g8PvxnvPePqqrS+Oq6TsaY3bQ7AwBlWaa+72fcWnsG4pjtlwRt29J1XdbaRYGqbhOICCKyXhBjRFXXC1R12wIRoWmaLIH5tkBVcc49nXOXz5+doigS8AIOb3QNISTglOu4A8cJuy2wH8gAae5Udu5Anh8AAAAASUVORK5CYII=);
+				background-position: left center;
+				font-family: Arial, Verdana, sans;
+				font-size:	small;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Sascha’s Bookmarklets</h1>
+		<h2>Introduction</h2>
+		<p>This is a collection of <b>Bookmarklet</b> scripts that I created for my own use. They are published here for others to use and enjoy.</p>
+		<p>Please note that while I try to make them as cross-platform and standard-compliant as possible, I am in fact mostly using Firefox and I rarely test anything on any other browser. If I know about any incompatibilites, I list them below, but it is likely that these lists are not exhaustive.</p>
+		<p>Regardless of my own testing, all the scripts are provided “as is”, i.e. no guarantees for proper functioning or otherwise are given, and of course I take no responsibility if things go wrong for whatever reason.</p>
+		<h2>How to install</h2>
+		<p>In this file, bookmarklets are offered as links (with the <tt>javascript:</tt> method prefix). To install them in your browser, simply drag-and-drop the link to your bookmarks bar.</p>
+		<p>If you install more than a few of them, it is probably a good idea to create a folder to organize them in a more compact way.</p>
+		<h2>Index</h2>
+		<ul>
+			<li><a href="#text-insertion">Text Insertion</a>
+				<ul>
+					<li><a href="#insert-date-time">Insert current Date/Time (formatted)</a></li>
+					<li><a href="#calculate">Calculate</a></li>
+				</ul>
+			</li>
+			<li><a href="#unicode">Unicode Text</a>
+				<ul>
+					<li><a href="#character-replacements">Character replacements</a></li>
+					<li><a href="#math-characters">Mathematical Character replacements</a></li>
+				</ul>
+			</li>
+		</ul>
+		<hr />
+		<h2><a name="text-insertion"></a>Text insertion</h2>
+		<p>The following scripts insert text into a text input field. Obviously, they only work if such an input field is active. They may not work in web applications that use other means of text input (e.g. the Twitter web client uses a <tt>div</tt> as input field.</p>
+		<h3><a name="insert-date-time"></a><a href="./text-insert/insert-date-time-formatted.html">Insert current Date/Time (formatted)</a></h3>
+		<p>This bookmarklet inserts the current date and/or time at the cursor position in any text input field.</p>
+		<dl>
+			<dt>Bookmarklet:</dt>
+			<dd><a href="javascript:(function(){var%20format='dd.MM.yyyy';var%20ae=document.activeElement;var%20or=ae.value;var%20sp=ae.selectionStart;var%20ep=ae.selectionEnd;if(sp!=ep){format=or.substr(sp,ep);}if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT'&&(ae.type=='text'||ae.type=='date'||ae.type=='datetime'||ae.type=='datetime-local'))){if(ae.tagName=='INPUT'){switch(ae.type){case'datetime':case'datetime-local':format='dd.MM.yyyy%20hh:mm:ss';break;case'month':format='MM/yyyy';break;case'time':format='hh:mm:ss';break;case'text':case'date':break;default:return;}}var%20now=new%20Date();var%20o={'M+':now.getMonth()+1,'d+':now.getDate(),'h+':now.getHours(),'m+':now.getMinutes(),'s+':now.getSeconds(),'q+':Math.floor((now.getMonth()+3)/3),'S':now.getMilliseconds()};if(/(y+)/.test(format)){format=format.replace(RegExp.$1,(now.getFullYear()+'').substr(4-RegExp.$1.length));}for(var%20k%20in%20o){if(new%20RegExp('('+k+')').test(format)){format=format.replace(RegExp.$1,RegExp.$1.length==1?o[k]:('00'+o[k]).substr((''+o[k]).length));}}r=or.slice(0,sp)+format+or.slice(ep,or.length);ae.value=r;ae.selectionStart=sp;ae.selectionEnd=sp+format.length;}})();" title="drag to bookmarks to install" class="dragnolink">Insert current Date/Time (formatted)</a></dd>
+		</dl>
+		
+		<h3><a name="calculate"></a><a href="./text-insert/calculate.html">Calculate Formula</a></h3>
+		<p>Calculate the result of any mathematical formula.</p>
+		<dl>
+			<dt>Bookmarklet:</dt>
+			<dd><a href="javascript:(function(){var ae=document.activeElement;var or=ae.value;var sp=ae.selectionStart;var ep=ae.selectionEnd;if(sp==ep){sp=0;ep=or.length;}var src=or.substr(sp,ep);if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT'&&ae.type=='text')){try{var r=eval(src);ae.value=or.slice(0,sp)+r+or.slice(ep,or.length);ae.selectionStart=sp;ae.selectionEnd=sp+r.length;}catch(e){alert(e.name+'\n'+ e.message);}}})();" title="drag to bookmarks to install" class="dragnolink">Calculate Formula</a></dd>
+		</dl>
+		
+		<h2><a name="unicode"></a>Unicode Text</h2>
+		<p>These bookmarklets make use of the fact that most websites nowadays use UTF-8 or another Unicode character encoding. That means that you have many interesting and useful – but often hard to reach – characters available for your writing.</p>
+		<h3><a name="character-replacements"></a><a href="./unicode/character-replacements.html">Character replacements</a></h3>
+		<p>This is a set of bookmarklets that replace typed (Latin) text with characters that represent the same letters but have a different visual appearance:</p>
+		<dl>
+			<dt>Bookmarklets:</dt>
+				<dd><a href="javascript:(function(){const kS='abcdefghijklmnopqrstuvwxyz'.split('');const kT=['ᴀ','ʙ','ᴄ','ᴅ','ᴇ','ғ','ɢ','ʜ','ɪ','ᴊ','ᴋ','ʟ','ᴍ','ɴ','ᴏ','ᴩ','ǫ','ʀ','s','ᴛ','ᴜ','ᴠ','ᴡ','x','ʏ','ᴢ'];var ae=document.activeElement;if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT'&&ae.type=='text')){var src=ae.value.split('');var sp=ae.selectionStart;var ep=ae.selectionEnd;var l=0;for(var i=sp;i<ep;i++){var c=src[i];var p=kS.indexOf(c);if(p>=0){var r=kT[p];l+=r.length;src[i]=r;}}ae.value=src.join('');ae.selectionStart=sp;ae.selectionEnd=sp+l;}})();" title="drag to bookmarks to install" class="dragnolink">Convert plain text to Sᴍᴀʟʟ Cᴀᴩs</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Convert plain text to Ｆｕｌｌｗｉｄｔｈ</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Convert plain text to Ⓒⓘⓡⓒⓛⓔⓓ</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Convert plain text to ⒫⒜⒭⒠⒩⒯⒣⒠⒮⒤⒮⒠⒟</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Convert plain text to ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ</a></dd>
+		</dl>
+		
+		<!--h3><a name="math-characters"></a><a href="./unicode/pseudofont-substitutions.html">Math Pseudofont substitutions</a></h3>
+		<p>The Unicode standard defines a number of styled character sets for mathematical typesetting. The main difference to the other character replacements is that these are using characters from the <abbr title="Supplementary Multilingual Plane">SMP</abbr> (Supplementary Multilingual Plane), which isn't supported on all platforms (notably, Android and iOS-users won't see them).</p>
+		<dl>
+			<dt>Bookmarklets:</dt>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝖬𝖺𝗍𝗁 𝖲𝖺𝗇𝗌-𝖲𝖾𝗋𝗂𝖿</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝘔𝘢𝘵𝘩 𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝗠𝗮𝘁𝗵 𝗦𝗮𝗻𝘀 𝗕𝗼𝗹𝗱</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝙈𝙖𝙩𝙝 𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙𝙄𝙩𝙖𝙡𝙞𝙘</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝑀𝑎𝑡ℎ 𝑆𝑒𝑟𝑖𝑓 𝐼𝑡𝑎𝑙𝑖𝑐</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝐌𝐚𝐭𝐡 𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝑴𝒂𝒕𝒉 𝑺𝒆𝒓𝒊𝒇 𝑩𝒐𝒍𝒅𝑰𝒕𝒂𝒍𝒊𝒄</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to ℳ𝒶𝓉𝒽 𝒮𝒸𝓇𝒾𝓅𝓉</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝓜𝓪𝓽𝓱 𝓢𝓬𝓻𝓲𝓹𝓽 𝓑𝓸𝓵𝓭</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝔐𝔞𝔱𝔥 𝔉𝔯𝔞𝔨𝔱𝔲𝔯</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝕸𝖆𝖙𝖍 𝕱𝖗𝖆𝖐𝖙𝖚𝖗 𝕭𝖔𝖑𝖉</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain text to 𝙼𝚊𝚝𝚑 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎</a></dd>
+				<dd><a href="javascript:(function(){alert('coming soon!')})();" title="drag to bookmarks to install" class="dragnolink">Plain Text to 𝕄𝕒𝕥𝕙 𝔻𝕠𝕦𝕓𝕝𝕖-𝕊𝕥𝕣𝕦𝕔𝕜</a></dd>
+			</dl-->
+			
+	<script language="javascript"><!--
+		
+			var nolinks = document.querySelectorAll('a.dragnolink');
+			
+			for(var num in nolinks) {
+				if (nolinks[num].addEventListener)
+					nolinks[num].addEventListener ('click',blockClick,false);
+				else if (nolinks[num].attachEvent)
+					nolinks[num].attachEvent ('onclick',blockClick); 
+			}
+
+			function blockClick(e) {
+				e.preventDefault();
+				e.stopPropagation();
+			}
+
+		// --></script>
+	</body>
+</html>
