@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sascha’s Bookmarklets: Unicode: Calculate</title>
+		<script language="javascript"><!--
+
+			function test() {
+
+				var ae=document.activeElement;
+				var or=ae.value;
+				var sp=ae.selectionStart;
+				var ep=ae.selectionEnd;
+				if(sp==ep){sp=0;ep=or.length;}
+				var src=or.substr(sp,ep);
+				
+				if(ae.tagName=='TEXTAREA'||
+					(ae.tagName=='INPUT' && ae.type=='text')){
+					
+					try{
+						var r = eval(src);
+						
+						ae.value=or.slice(0,sp)+r+or.slice(ep,or.length);
+						ae.selectionStart=sp;
+						ae.selectionEnd=sp+r.length;
+					} catch(e) {
+						alert(e.name + '\n' + e.message);
+					}
+
+				}
+			} 
+		// --></script>
+	</head>
+	<body>
+		<h1>Calculate</h1>
+		<p>This bookmarklet interprets the current text selection as mathematical formula and replaces it with the result of the calculation.</p>
+		<p>For example, you could enter into a text field a calculation like <tt>12*24+10</tt>, select this formula, run the bookmarklet and <i lang="fr">voilà</i> it says <tt>298</tt> instead.</p>
+		
+		<h2>Security Considerations</h2>
+		<p>The script uses <tt>eval()</tt> to calculate the result. This means you have access to all JavaScript functions, but unfortunately this also means that there is a potential security issue.</p>
+		<p>For your own safety, please always adhere to the following rule:</p>
+		<ul><li>Never run this script on any formula that you don't understand.<br />
+			Especially if this has been brought to you by a third party!</li>
+		</ul>
+		<p>This should not be a problem in a typical use scenario, where you just want to avoid having to use an external calculator, but it is important to keep this in mind!</p>
+		
+		<h2>Instructions</h2>
+		
+		<p>Simply enter any mathematical formula into any text field (example: <tt>12*24+10</tt>). Select the part of the formula that you want to calculate and then run the bookmarklet.</p>
+		<p>Note that if there is no selection, the entire text field content will be used as a formula.</p>
+		<p>If there is an error in your formula, you will see a message box alerting you of the error. Otherwise the formula (or the part of it that was selected) will be replaced with the result of the calculation.</p>
+		<p>Because the JavaScript interpreter is used to parse the formula, you can use anything that is allowed in JavaScript as well. In particular, this means you also have access to the <tt>Math</tt> object. For example:</p>
+		<ul>
+			<li><tt>Math.sqrt(x)</tt> = <span class="render_latex"><span role="presentation" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msqrt><mn>2</mn><mi>a</mi><mi>b</mi></msqrt></math>" style="position: relative;" tabindex="0" id="MathJax-Element-1-Frame" class="MathJax"><span role="presentation" class="MJX_Assistive_MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>x</mn></msqrt></math></span></span><script id="MathJax-Element-1" type="math/tex">\sqrt{2ab}</script></span></li>
+			<li><tt>Math.pow(x,y)</tt> = <tt>x<sup>y</sup></tt></li>
+			<li><tt>Math.exp(x)</tt> = E<sup>x</sup></li>
+			<li>&hellip;</li>
+		</ul>
+		<p>The <tt>Math</tt> object also exports a number of constants that you can use, e.g.:</p>
+		<ul>
+			<li><tt>Math.PI</tt> = π = 3.141592653589793&hellip;</li>
+			<li><tt>Math.E</tt> = Euler’s number = 2.718281828459045&hellip;</li>
+			<li>&hellip;</li>
+		</ul>
+	
+		<h2>Examples</h2>
+		
+		<ol>
+			<li><input type="text" id="test01" value="12*24+10" /><button onclick="testInField('test01');">← Test</button></li>
+			<li><input type="text" id="test02" value="(7/8)*8" /><button onclick="testInField('test02');">← Test</button></li>
+			<li><input type="text" id="test03" value="Math.PI*3/4" /><button onclick="testInField('test03');">← Test</button></li>
+			<li><input type="text" id="test04" value="Math.round(Math.random()*100)" /><button onclick="testInField('test04');">← Test</button></li>
+			<li><input type="text" id="test05" value="alert('beware of potential security issues with this bookmarklet!')" /><button onclick="testInField('test05');">← Test</button></li>
+		</ol>
+		
+		<hr />
+		
+		<p><small>&copy; 2016 by Sascha René Leib, all rights reserved.</small></p>
+		
+		<script language="javascript"><!--
+		
+			function testInField(id) {
+				
+				var element = document.getElementById(id);
+				if (element != null) {
+					element.focus();
+					test()
+				}
+			}
+
+		// --></script>
+	</body>
+</html>
