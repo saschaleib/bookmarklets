@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sascha’s Bookmarklets: Text insert: Current Date/Time (formatted)</title>
+		<script language="javascript"><!--
+
+			function test() {
+
+				var format='dd.MM.yyyy';
+				var ae=document.activeElement;
+				var or=ae.value;
+				var sp=ae.selectionStart;
+				var ep=ae.selectionEnd;
+				if(sp!=ep){
+					format=or.substr(sp,ep);
+				}
+				
+				if(ae.tagName=='TEXTAREA'||
+					(ae.tagName=='INPUT' && (ae.type=='text'||ae.type=='date'||ae.type=='datetime'||ae.type=='datetime-local'))){
+					if (ae.tagName=='INPUT'){
+						switch(ae.type){
+							case 'datetime':
+							case 'datetime-local':
+								format='dd.MM.yyyy hh:mm:ss';
+								break;
+							case 'month':
+								format='MM/yyyy';
+								break;
+							case 'time':
+								format='hh:mm:ss';
+								break;
+							case 'text':
+							case 'date':
+								break;
+							default:
+								return;
+						}
+					}
+		
+					var now=new Date();
+					var o={
+						'M+':now.getMonth()+1,
+						'd+':now.getDate(),
+						'h+':now.getHours(),
+						'm+':now.getMinutes(),
+						's+':now.getSeconds(),
+						'q+':Math.floor((now.getMonth()+3)/3),
+						'S':now.getMilliseconds()
+					};
+
+					if(/(y+)/.test(format)){
+						format=format.replace(RegExp.$1,(now.getFullYear()+'').substr(4-RegExp.$1.length));
+					}
+					for(var k in o){
+						if(new RegExp('('+ k +')').test(format)){
+							format = format.replace(RegExp.$1, RegExp.$1.length==1?o[k]:('00'+ o[k]).substr((''+ o[k]).length));
+						}
+					}
+					r = or.slice(0,sp)+format+or.slice(ep,or.length);
+	
+					ae.value=r;
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+format.length;
+				}
+			} 
+		// --></script>
+	</head>
+	<body>
+		<h1>Insert current Date/Time (formatted)</h1>
+		<p>This bookmarklet inserts the current date at the cursor position in any text input field.</p>
+		<p>The default format is <tt>dd.MM.yyyy</tt> for plain text fields, but you can make it use another format (including time formats) by selecting a format string first.</p>
+		<h2>Instructions</h2>
+		<p>If you call the bookmarklet without a selection (e.g. by simply clicking the buttons below without first selecting anything in the text fields), the current date will be inserted in the text field. More precisely, it will be inserted at the current cursor position.</p>
+		<p>To have more control over the output, you can enter a format string into the text field and <mark>select</mark> it. The script will then take this format string to format the date.</p>
+		<p>The following format codes are understood:</p>
+		<ul>
+			<li><b>dd</b> = the current <em>day</em> number</li>
+			<li><b>MM</b> = the current <em>month</em> as number (note: capital letters!)</li>
+			<li><b>yy</b> or <b>yyyy</b> = the current <em>year</em> (as 2 or 4 digits)</li>
+			<li><b>hh</b> = the current <em>hour</em> (12 or 24h format, depending on your locale settings)</li>
+			<li><b>mm</b> = the current <em>minutes</em> (note: lower-case letters!)</li>
+			<li><b>ss</b> = the current <em>seconds</em></li>
+			<li><b>S</b> = current <em>milliseconds</em> (effectively a random number between 0 and 999)</li>
+		</ul>
+		<p>Examples:</p>
+		<ul>
+			<li><tt>dd.MM.yyyy</tt> = e.g. “24.12.2016” – the default date format</li>
+			<li><tt>hh:mm:ss</tt> = e.g. “08:56:34” – the current time</li>
+			<li><tt>MM/dd/yy</tt> = e.g. “12/24/16” – common North-American date format</li>
+		</ul>				
+		<h2>Test Setup:</h2>
+		<p>Test the functionality in a <tt>&lt;textarea&gt;</tt> field:<br />
+			<textarea cols="35" rows="1" id="ta-source">dd.mm.yyyy hh:mm:ss</textarea><button onclick="testInField('ta-source');">← Test</button>
+		</p>
+		<p>Test the same in an <tt>&lt;input type=&quot;text&quot;&gt;</tt> field:<br />
+			<input type="text" id="txt-source" /><button onclick="testInField('txt-source');">← Test</button>
+		</p>
+		
+		<h3>Other Input Field Types</h3>
+		<p>The script is aware of other types of <tt>&lt;input&gt;</tt> fields and will adjust the default date or time format accordingly, but at the moment the following field types are simply treated as <tt>&quot;text&quot;</tt> fields internally by common web browsers. For this reason, you will probably not see any different behaviour&hellip;</p>
+		<dl>
+			<td><tt>&lt;input type=&quot;time&quot;&gt;</tt></dt>
+			<dd><input type="time" id="time-source" /><button onclick="testInField('time-source');">← Test</button></dd>
+		</dl>
+		<dl>
+			<td><tt>&lt;input type=&quot;datetime&quot;&gt;</tt></dt>
+			<dd><input type="datetime" id="dt-source" /><button onclick="testInField('dt-source');">← Test</button></dd>
+		</dl>
+		<dl>
+			<td><tt>&lt;input type=&quot;datetime-local&quot;&gt;</tt></dt>
+			<dd><input type="datetime-local" id="dtl-source" /><button onclick="testInField('dtl-source');">← Test</button></dd>
+		</dl>
+		
+		<hr />
+		
+		<p><small>&copy; 2016 by Sascha René Leib, all rights reserved.</small></p>
+		
+		<script language="javascript"><!--
+		
+			function testInField(id) {
+				
+				var element = document.getElementById(id);
+				if (element != null) {
+					element.focus();
+					test()
+					evt.preventDefault();
+					evt.stopPropagation();
+				}
+			}
+
+		// --></script>
+	</body>
+</html>
