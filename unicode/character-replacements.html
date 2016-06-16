@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sascha’s Bookmarklets: Unicode: Character Replacements</title>
+		<script language="javascript"><!--
+
+			function textToSmallCaps() {
+
+				const kS='abcdefghijklmnopqrstuvwxyz'.split('');
+				const kT=['ᴀ','ʙ','ᴄ','ᴅ','ᴇ','ғ','ɢ','ʜ','ɪ','ᴊ','ᴋ','ʟ','ᴍ',
+						  'ɴ','ᴏ','ᴩ','ǫ','ʀ','s','ᴛ','ᴜ','ᴠ','ᴡ','x','ʏ','ᴢ'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0; /* length of replacement */
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			}
+			
+			function textToSuperscript() {
+
+				const kS='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+				const kT=['ᵃ','ᵇ','ᶜ','ᵈ','ᵉ','ᶠ','ᵍ','ʰ','ⁱ','ʲ','ᵏ','ˡ','ᵐ',
+						  'ⁿ','ᵒ','ᵖ','q','ʳ','ˢ','ᵗ','ᵘ','ᵛ','ʷ','ˣ','ʸ','ᶻ',
+						  'ᴬ','ᴮ','ᶜ','ᴰ','ᴱ','ᶠ','ᴳ','ᴴ','ᴵ','ᴶ','ᴷ','ᴸ','ᴹ',
+						  'ᴺ','ᴼ','ᴾ','Q','ᴿ','ˢ','ᵀ','ᵁ','ⱽ','ᵂ','ˣ','ʸ','ᶻ',
+						  '⁰','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			} 
+
+			function textToCircled() {
+
+				const kS='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-*·=—/ツ'.split('');
+				const kT=['ⓐ','ⓑ','ⓒ','ⓓ','ⓔ','ⓕ','ⓖ','ⓗ','ⓘ','ⓙ','ⓚ','ⓛ','ⓜ',
+						  'ⓝ','ⓞ','ⓟ','ⓠ','ⓡ','ⓢ','ⓣ','ⓤ','ⓥ','ⓦ','ⓧ','ⓨ','ⓩ',
+						  'Ⓐ','Ⓑ','Ⓒ','Ⓓ','Ⓔ','Ⓕ','Ⓖ','Ⓗ','Ⓘ','Ⓙ','Ⓚ','Ⓛ','Ⓜ',
+						  'Ⓝ','Ⓞ','Ⓟ','Ⓠ','Ⓡ','Ⓢ','Ⓣ','Ⓤ','Ⓥ','Ⓦ','Ⓧ','Ⓨ','Ⓩ',
+						  '⓪','①','②','③','④','⑤','⑥','⑦','⑧','⑨','⊕','⊖','⊛',
+						  '⊙','⊜','⊝','⊘','㋡'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			} 
+			
+			function textToParenthesised() {
+
+				const kS='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+				const kT=['⒜','⒝','⒞','⒟','⒠','⒡','⒢','⒣','⒤','⒥','⒦','⒧','⒨',
+						  '⒩','⒪','⒫','⒬','⒭','⒮','⒯','⒰','⒱','⒲','⒳','⒴','⒵',
+						  '⒜','⒝','⒞','⒟','⒠','⒡','⒢','⒣','⒤','⒥','⒦','⒧','⒨',
+						  '⒩','⒪','⒫','⒬','⒭','⒮','⒯','⒰','⒱','⒲','⒳','⒴','⒵',
+						  '⓪','⑴','⑵','⑶','⑷','⑸','⑹','⑺','⑻','⑼'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			} 
+			
+			function textToFullwidth() {
+
+				const kS='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !#$%&'\"()*+,-./:;<=>?@^_`|~".split('');
+				const kT=['ａ','ｂ','ｃ','ｄ','ｅ','ｆ','ｇ','ｈ','ｉ','ｊ','ｋ','ｌ','ｍ',
+						  'ｎ','ｏ','ｐ','ｑ','ｒ','ｓ','ｔ','ｕ','ｖ','ｗ','ｘ','ｙ','ｚ',
+						  'Ａ','Ｂ','Ｃ','Ｄ','Ｅ','Ｆ','Ｇ','Ｈ','Ｉ','Ｊ','Ｋ','Ｌ','Ｍ',
+						  'Ｎ','Ｏ','Ｐ','Ｑ','Ｒ','Ｓ','Ｔ','Ｕ','Ｖ','Ｗ','Ｘ','Ｙ','Ｚ',
+						  '０','１','２','３','４','５','６','７','８','９','　', '！','＃',
+						  '＄','％','＆','＇','"','（','）','＊','＋','，','－','．','／',
+						  '：','；','<','＝','>','？','＠','^','_','`','|','~'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			} 
+		// --></script>
+	</head>
+	<body>
+		<h1>Unicode Character Replacements</h1>
+		<p>This is a set of bookmarklets that replace typed (Latin) text with characters that represent the same letters but have a different visual appearance.</p>
+		<h2>Detailled Information</h2>
+		<h3>Small Caps</h3>
+		<p>There are several symbols available in Unicode that resemble small capitals. This script replaces all lower-case plain characters (i.e. without accents) with these characters to create the appearance of a proper Sᴍᴀʟʟ Cᴀᴩs text.</p>	
+		<p>Depending on the typeface the visual appearance of these characters may slightly vary, but they appear to work well on all common platforms.</p>	
+		<dl>
+			<dt>Example:</dt>
+			<dd>Lᴏʀᴇᴍ ɪᴩsᴜᴍ ᴅᴏʟᴏʀ sɪᴛ ᴀᴍᴇᴛ, ᴄᴏɴsᴇᴛᴇᴛᴜʀ …</dd>
+		</dl>
+		
+		<h3>Superscript</h3>
+		<p>In addition to a full set (0-9) of numerals, Unicode specifies an almost complete set of superscript characters, including upper- and lower-case letters. Only the letter Q is missing from both sets.</p>	
+		<p>Since these characters come from different contexts they may vary in appearance, but they appear to work just fine on all common platforms.</p>	
+		<dl>
+			<dt>Example:</dt>
+			<dd>ᴸᵒʳᵉᵐ ⁱᵖˢᵘᵐ ᵈᵒˡᵒʳ ˢⁱᵗ ᵃᵐᵉᵗ, ᵐᵃᵍⁿᵃ ᵃˡⁱqᵘʸᵃᵐ ᵉʳᵃᵗ…</dd>
+		</dl>
+		
+		<h3>Circled</h3>
+		<p>The Unicode “Enclosed Alphanumerics” code block contains a full set of encircled letters and numbers. For good measure, the script also replaces a number of mathematical operators and the katakana <a href="http://unicode-table.com/en/30C4/" target="_blank">Tu</a> (ツ) with encircled versions</p>	
+		<p>Support for “Enclosed Alphanumerics” is very good across browsers and platforms, but the encircled math operators may look slightly different from the other characters, depending on the platform.</p>	
+		<dl>
+			<dt>Example:</dt>
+			<dd>Ⓛⓞⓡⓔⓜ ⓘⓟⓢⓤⓜ ⓓⓞⓛⓞⓡ ⓢⓘⓣ ⓐⓜⓔⓣ, ㋡</dd>
+		</dl>
+
+		<h3>Parenthesised</h3>
+		<p>Also part of the “Enclosed Alphanumerics” code block is a set of letters and all numbers with parentheses. There are no upper-case variants of these, therefore the script also converts all letters to lower-case.</p>	
+		<p>Support for “Enclosed Alphanumerics” is very good across browsers and platforms.</p>	
+		<dl>
+			<dt>Example:</dt>
+			<dd>⒧⒪⒭⒠⒨ ⒤⒫⒮⒰⒨ ⒟⒪⒧⒪⒭ ⒮⒤⒯ ⒜⒨⒠⒯ …</dd>
+		</dl>
+		
+		<h3>Fullwidth Forms</h3>
+		<p>These are variants of the standard plain Latin characters</p>	
+		<p>Support for Fullwidth Forms is very good across browsers and platforms. Google even seems to recognise them as equivalent to the regular characters, at least for searches.</p>	
+		<dl>
+			<dt>Example:</dt>
+			<dd>Ｌｏｒｅｍ　ｉｐｓｕｍ　ｄｏｌｏｒ　ｓｉｔ　ａｍｅｔ　…</dd>
+		</dl>
+
+		
+		<h2>Test Setup:</h2>
+		<p>You can test these functions in the following text field. Please select some text before clicking on any of the buttons below:<br />
+			<textarea cols="40" rows="3" id="source">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</textarea><br clear="all" />
+			<button onclick="testReplacement('small-caps');">Sᴍᴀʟʟ Cᴀᴩs</button>
+			<button onclick="testReplacement('superscript');">Sᵘᵖᵉʳˢᶜʳⁱᵖᵗ</button>
+			<button onclick="testReplacement('circled');">Ⓒⓘⓡⓒⓛⓔⓓ</button>
+			<button onclick="testReplacement('parenthesised');">⒫⒜⒭⒠⒩⒯⒣⒠⒮⒤⒮⒠⒟</button>
+			<button onclick="testReplacement('fullwidth');">Ｆｕｌｌｗｉｄｔｈ</button>
+		</p>
+
+		<hr />
+		
+		<p><small>&copy; 2016 by Sascha René Leib, all rights reserved.</small></p>
+		
+		<script language="javascript"><!--
+		
+			function testReplacement(type) {
+				
+				var element = document.getElementById('source');
+				if (element != null) {
+					element.focus();
+					switch(type) {
+						case 'small-caps':
+							textToSmallCaps();
+							break;
+						case 'superscript':
+							textToSuperscript();
+							break;
+						case 'circled':
+							textToCircled();
+							break;
+						case 'parenthesised':
+							textToParenthesised();
+							break;
+						case 'fullwidth':
+							textToFullwidth();
+							break;
+						default:
+					}
+				}
+			}
+
+		// --></script>
+	</body>
+</html>
