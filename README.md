@@ -7,4 +7,4 @@ Please note that while I try to make them as cross-platform and standard-complia
 
 Regardless of my own testing, all the scripts are provided “as is”, i.e. no guarantees for proper functioning or otherwise are given, and of course I take no responsibility if things go wrong for whatever reason.
 
-On top of my "to-do"-list is still making this a bit more user-friendly to use. For the time being, please grab the "overview.html" page to get started.
+On top of my "to-do"-list is still making this a bit more user-friendly to use. For the time being, please grab the "overview.html" page to get started (you'll have to download it and view it in the web browser you want to install the bookmarklets to, of course).
