@@ -318,72 +318,234 @@
 				}
 			}
 
+			function textToMathCalligraphy() {
+
+				const kS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split('');
+				const kT=['𝒜','ℬ','𝒞','𝒟','ℰ','ℱ','𝒢','ℋ','ℐ','𝒥','𝒦','ℒ','ℳ',
+						'𝒩','𝒪','𝒫','𝒬','ℛ','𝒮','𝒯','𝒰','𝒱','𝒲','𝒳','𝒴','𝒵',
+						'𝒶','𝒷','𝒸','𝒹','ℯ','𝒻','ℊ','𝒽','𝒾','𝒿','𝓀','𝓁','𝓂',
+						'𝓃','ℴ','𝓅','𝓆','𝓇','𝓈','𝓉','𝓊','𝓋','𝓌','𝓍','𝓎','𝓏'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			}
+
+			function textToMathCalligraphyBold() {
+
+				const kS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split('');
+				const kT=['𝓐','𝓑','𝓒','𝓓','𝓔','𝓕','𝓖','𝓗','𝓘','𝓙','𝓚','𝓛','𝓜',
+						'𝓝','𝓞','𝓟','𝓠','𝓡','𝓢','𝓣','𝓤','𝓥','𝓦','𝓧','𝓨','𝓩',
+						'𝓪','𝓫','𝓬','𝓭','𝓮','𝓯','𝓰','𝓱','𝓲','𝓳','𝓴','𝓵','𝓶',
+						'𝓷','𝓸','𝓹','𝓺','𝓻','𝓼','𝓽','𝓾','𝓿','𝔀','𝔁','𝔂','𝔃'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			}
+
+			function textToMathFraktur() {
+
+				const kS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-".split('');
+				const kT=['𝔄','𝔅','ℭ','𝔇','𝔈','𝔉','𝔊','ℌ','ℑ','𝔍','𝔎','𝔏','𝔐',
+						'𝔑','𝔒','𝔓','𝔔','ℜ','𝔖','𝔗','𝔘','𝔙','𝔚','𝔛','𝔜',
+						'ℨ','𝔞','𝔟','𝔠','𝔡','𝔢','𝔣','𝔤','𝔥','𝔦','𝔧','𝔨','𝔩','𝔪',
+						'𝔫','𝔬','𝔭','𝔮','𝔯','𝔰','𝔱','𝔲','𝔳','𝔴','𝔵','𝔶','𝔷','⸗'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			}
+
+			function textToMathFrakturBold() {
+
+				const kS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-".split('');
+				const kT=['𝕬','𝕭','𝕮','𝕯','𝕰','𝕱','𝕲','𝕳','𝕴','𝕵','𝕶','𝕷','𝕸',
+						'𝕹','𝕺','𝕻','𝕼','𝕽','𝕾','𝕿','𝖀','𝖁','𝖂','𝖃','𝖄','𝖅',
+						'𝖆','𝖇','𝖈','𝖉','𝖊','𝖋','𝖌','𝖍','𝖎','𝖏','𝖐','𝖑','𝖒','𝖓',
+						'𝖔','𝖕','𝖖','𝖗','𝖘','𝖙','𝖚','𝖛','𝖜','𝖝','𝖞','𝖟','⸗'];
+							
+				var ae=document.activeElement;
+				if(ae.tagName=='TEXTAREA'||(ae.tagName=='INPUT' && ae.type=='text')){
+				
+					var src = ae.value.split('');
+					var sp=ae.selectionStart;
+					var ep=ae.selectionEnd;
+					var l=0;
+
+					for(var i=sp;i<ep;i++){
+						var c = src[i];
+						var p=kS.indexOf(c);
+						if(p>=0){
+							var r=kT[p];
+							l+=r.length;
+							src[i]=r;
+						}
+					}
+	
+					ae.value=src.join('');
+					ae.selectionStart=sp;
+					ae.selectionEnd=sp+l;
+				}
+			}
+
 		// --></script>
 	</head>
 	<body>
-		<h1>Unicode Math Pseudofont Substitutions</h1>
-		<p>These bookmarklets also replace plain characters with Unicode alternatives. The difference with the standard <a href="./character-replacements.html">character replacement</a> scripts is that these here use characters from the <abbr title="Supplementary Multilingual Plane">SMP</abbr>, which aren't fully supported by all platforms (notably iOS and Android fail to display these characters).</p>
-		<p>This means you should avoid using these (at the time of this writing at least) for text that might be displayed on common mobile platforms (e.g. on social media).</p>
-		<p>On common desktop platforms, they seem to work fine (at least under Windows 7, 10 and MacOS 10.11, where I have tested it).</p>
-		<p>You should also keep in mind that these characters were designed to have a different <em>semantic</em> meaning than the regular characters: they are symbols for <em>mathematical typesetting</em>, and most programs will not recognise words that are created entirely or even just partly from such characters as equivalent to words composed of regular characters.</p>
-		<p>Most notably, Google will not recognise these as words even!</p>
-		<p>You should also be aware that hyphenation or spell-checking may not work as expected with these characters.</p>
-		<h2>Example Texts</h2>
-		<h3>1. Math Sans Serif</h3>
-		<p>These are complete replacements for all plain Latin characters. Only 𝗕𝗼𝗹𝗱 and 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 variants support a full set of Greek characters (without diacritics!) as well, but 𝘐𝘵𝘢𝘭𝘪𝘤 and 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 come without their own set of numbers.</p>
-		<dl>
-			<dt>Plain:</dt>
-			<dd>𝖫𝗈𝗋𝖾𝗆 𝗂𝗉𝗌𝗎𝗆 𝖽𝗈𝗅𝗈𝗋 𝗌𝗂𝗍 𝖺𝗆𝖾𝗍, 𝟣𝟤𝟥 …</dd>
-			<dt>Italic:</dt>
-			<dd>𝘓𝘰𝘳𝘦𝘮 𝘪𝘱𝘴𝘶𝘮 𝘥𝘰𝘭𝘰𝘳 𝘴𝘪𝘵 𝘢𝘮𝘦𝘵, …</dd>
-			<dt>Bold:</dt>
-			<dd>𝗟𝗼𝗿𝗲𝗺 𝗶𝗽𝘀𝘂𝗺 𝗱𝗼𝗹𝗼𝗿 𝘀𝗶𝘁 𝗮𝗺𝗲𝘁, 𝟭𝟮𝟯, 𝜶𝜷𝜸 …</dd>
-			<dt>Bold Italic:</dt>
-			<dd>𝗟𝗼𝗿𝗲𝗺 𝗶𝗽𝘀𝘂𝗺 𝗱𝗼𝗹𝗼𝗿 𝘀𝗶𝘁 𝗮𝗺𝗲𝘁, 𝞪𝞫𝞬 …</dd>
-		</dl>
-		
-		<h3>2. Math Serif</h3>
-		<p>There is no “plain” Math Serif pseudofont (presumably because the base font style is considered to be “serif“ in any case). Numbers only exist in 𝐁𝐨𝐥𝐝, but Greek characters are available for all three variants.</p>
-		<dl>
-			<dt>Italic:</dt>
-			<dd>𝐿𝑜𝑟𝑒𝑚 𝑖𝑝𝑠𝑢𝑚 𝑑𝑜𝑙𝑜𝑟 𝑠𝑖𝑡 𝑎𝑚𝑒𝑡, 𝛼𝛽𝛾𝛿 …</dd>
-			<dt>Bold:</dt>
-			<dd>𝐋𝐨𝐫𝐞𝐦 𝐢𝐩𝐬𝐮𝐦 𝐝𝐨𝐥𝐨𝐫 𝐬𝐢𝐭 𝐚𝐦𝐞𝐭, 𝟏𝟐𝟑, 𝛄𝛅𝛆𝛇 …</dd>
-			<dt>Bold Italic:</dt>
-			<dd>𝑳𝒐𝒓𝒆𝒎 𝒊𝒑𝒔𝒖𝒎 𝒅𝒐𝒍𝒐𝒓 𝒔𝒊𝒕 𝒂𝒎𝒆𝒕, 𝜶𝜷𝜸𝜹 …</dd>
-		</dl>
-		
-		<h3>3. Math Monospace</h3>
-		<p>There is only one Monospace variant. It includes numbers but no Greek characters.</p>
-		<dl>
-			<dt>Monospace:</dt>
-			<dd>𝙻𝚘𝚛𝚎𝚖 𝚒𝚙𝚜𝚞𝚖 𝚍𝚘𝚕𝚘𝚛 𝚜𝚒𝚝 𝚊𝚖𝚎𝚝, 𝟷𝟸𝟹 …</dd>
-		</dl>
-		
-		<h3>3. Math Double-struck</h3>
-		<p>Double-struck symbols are often used in mathematics for sets. There's a full set of letters and numbers available, but no Greek variants and only one style (which strictly speaking counts as 𝕓𝕠𝕝𝕕):</p>
-		<dl>
-			<dt>Double-struck:</dt>
-			<dd>𝕃𝕠𝕣𝕖𝕞 𝕚𝕡𝕤𝕦𝕞 𝕕𝕠𝕝𝕠𝕣 𝕤𝕚𝕥 𝕒𝕞𝕖𝕥, 𝟙𝟚𝟛 …</dd>
-		</dl>		
-		<h2>Test Setup:</h2>
-		<p>You can test these functions in the following text field. Please select some text before clicking on any of the buttons below:<br />
-			<textarea cols="40" rows="3" id="source">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</textarea><br clear="all" />
-			<button onclick="testReplacement('math-sans-serif');">𝖬𝖺𝗍𝗁 𝖲𝖺𝗇𝗌</button>
-			<button onclick="testReplacement('math-sans-italic');">𝘔𝘢𝘵𝘩 𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤</button>
-			<button onclick="testReplacement('math-sans-bold');">𝗠𝗮𝘁𝗵 𝗦𝗮𝗻𝘀 𝗕𝗼𝗹𝗱</button>
-			<button onclick="testReplacement('math-sans-bold-italic');">𝙈𝙖𝙩𝙝 𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘</button><br />
-			<button onclick="testReplacement('math-serif-italic');">𝑀𝑎𝑡ℎ 𝑆𝑒𝑟𝑖𝑓 𝐼𝑡𝑎𝑙𝑖𝑐</button>
-			<button onclick="testReplacement('math-serif-bold');">𝐌𝐚𝐭𝐡 𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝</button>
-			<button onclick="testReplacement('math-serif-bold-italic');">𝑴𝒂𝒕𝒉 𝑺𝒆𝒓𝒊𝒇 𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄</button><br />
-			<button onclick="testReplacement('math-monospace');">𝙼𝚊𝚝𝚑 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎</button>
-			<button onclick="testReplacement('math-double-struck');">𝕄𝕒𝕥𝕙 𝔻𝕠𝕦𝕓𝕝𝕖-𝕊𝕥𝕣𝕦𝕔𝕜</button>
-		</p>
-
+		<article>
+			<header>
+				<h1>Unicode Math Pseudofont Substitutions</h1>
+				<p>These bookmarklets also replace plain characters with Unicode alternatives. The difference with the standard <a href="./character-replacements.html">character replacement</a> scripts is that these here use characters from the <abbr title="Supplementary Multilingual Plane">SMP</abbr>, which aren't fully supported by all platforms (notably iOS and Android fail to display these characters).</p>
+				<p>This means you should avoid using these (at the time of this writing at least) for text that might be displayed on common mobile platforms (e.g. on social media).</p>
+				<p>On common desktop platforms, they seem to work fine (at least under Windows 7, 10 and MacOS 10.11, where I have tested it).</p>
+				<p>You should also keep in mind that these characters were designed to have a different <em>semantic</em> meaning than the regular characters: they are symbols for <em>mathematical typesetting</em>, and most programs will not recognise words that are created entirely or even just partly from such characters as equivalent to words composed of regular characters.</p>
+				<p>Most notably, Google will not recognise these as words even!</p>
+				<p>You should also be aware that hyphenation or spell-checking may not work as expected with these characters.</p>
+			</header>
+			<h2>Example Texts</h2>
+			<section>
+				<h3>1. Math Sans Serif</h3>
+				<p>These are complete replacements for all plain Latin characters. Only 𝗕𝗼𝗹𝗱 and 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 variants support a full set of Greek characters (without diacritics!) as well, but 𝘐𝘵𝘢𝘭𝘪𝘤 and 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 come without their own set of numbers.</p>
+				<dl>
+					<dt>Plain:</dt>
+					<dd>𝖫𝗈𝗋𝖾𝗆 𝗂𝗉𝗌𝗎𝗆 𝖽𝗈𝗅𝗈𝗋 𝗌𝗂𝗍 𝖺𝗆𝖾𝗍, 𝟣𝟤𝟥 …</dd>
+					<dt>Italic:</dt>
+					<dd>𝘓𝘰𝘳𝘦𝘮 𝘪𝘱𝘴𝘶𝘮 𝘥𝘰𝘭𝘰𝘳 𝘴𝘪𝘵 𝘢𝘮𝘦𝘵, …</dd>
+					<dt>Bold:</dt>
+					<dd>𝗟𝗼𝗿𝗲𝗺 𝗶𝗽𝘀𝘂𝗺 𝗱𝗼𝗹𝗼𝗿 𝘀𝗶𝘁 𝗮𝗺𝗲𝘁, 𝟭𝟮𝟯, 𝜶𝜷𝜸 …</dd>
+					<dt>Bold Italic:</dt>
+					<dd>𝗟𝗼𝗿𝗲𝗺 𝗶𝗽𝘀𝘂𝗺 𝗱𝗼𝗹𝗼𝗿 𝘀𝗶𝘁 𝗮𝗺𝗲𝘁, 𝞪𝞫𝞬 …</dd>
+				</dl>
+			</section><!-- Sans Serif -->
+			<section>
+				<h3>2. Math Serif</h3>
+				<p>There is no “plain” Math Serif pseudofont (presumably because the base font style is considered to be “serif“ in any case). Numbers only exist in 𝐁𝐨𝐥𝐝, but Greek characters are available for all three variants.</p>
+				<dl>
+					<dt>Italic:</dt>
+					<dd>𝐿𝑜𝑟𝑒𝑚 𝑖𝑝𝑠𝑢𝑚 𝑑𝑜𝑙𝑜𝑟 𝑠𝑖𝑡 𝑎𝑚𝑒𝑡, 𝛼𝛽𝛾𝛿 …</dd>
+					<dt>Bold:</dt>
+					<dd>𝐋𝐨𝐫𝐞𝐦 𝐢𝐩𝐬𝐮𝐦 𝐝𝐨𝐥𝐨𝐫 𝐬𝐢𝐭 𝐚𝐦𝐞𝐭, 𝟏𝟐𝟑, 𝛄𝛅𝛆𝛇 …</dd>
+					<dt>Bold Italic:</dt>
+					<dd>𝑳𝒐𝒓𝒆𝒎 𝒊𝒑𝒔𝒖𝒎 𝒅𝒐𝒍𝒐𝒓 𝒔𝒊𝒕 𝒂𝒎𝒆𝒕, 𝜶𝜷𝜸𝜹 …</dd>
+				</dl>
+			</section><!-- Serif -->
+			<section>
+				<h3>3. Math Monospace</h3>
+				<p>There is only one Monospace variant. It includes numbers but no Greek characters.</p>
+				<dl>
+					<dt>Monospace:</dt>
+					<dd>𝙻𝚘𝚛𝚎𝚖 𝚒𝚙𝚜𝚞𝚖 𝚍𝚘𝚕𝚘𝚛 𝚜𝚒𝚝 𝚊𝚖𝚎𝚝, 𝟷𝟸𝟹 …</dd>
+				</dl>
+			</section><!-- Monospace -->
+			<section>
+				<h3>4. Math Double-struck</h3>
+				<p>Double-struck symbols are often used in mathematics for sets. There's a full set of letters and numbers available, but no Greek variants and only one style (which strictly speaking counts as 𝕓𝕠𝕝𝕕):</p>
+				<dl>
+					<dt>Double-struck:</dt>
+					<dd>𝕃𝕠𝕣𝕖𝕞 𝕚𝕡𝕤𝕦𝕞 𝕕𝕠𝕝𝕠𝕣 𝕤𝕚𝕥 𝕒𝕞𝕖𝕥, 𝟙𝟚𝟛 …</dd>
+				</dl>
+			</section><!-- Double-struck -->		
+			<section>
+				<h3>5. Math Calligraphy</h3>
+				<p>These script-style letters resemble a handwriting-style. Unfortunately, there are nor numbers in this set and no Greek symbols either.</p>
+				<dl>
+					<dt>Calligraphy:</dt>
+					<dd>ℒℴ𝓇ℯ𝓂 𝒾𝓅𝓈𝓊𝓂 𝒹ℴ𝓁ℴ𝓇 𝓈𝒾𝓉 𝒶𝓂ℯ𝓉, …</dd>
+					<dt>Calligraphy Bold:</dt>
+					<dd>𝓛𝓸𝓻𝓮𝓶 𝓲𝓹𝓼𝓾𝓶 𝓭𝓸𝓵𝓸𝓻 𝓼𝓲𝓽 𝓪𝓶𝓮𝓽, …</dd>
+				</dl>
+			</section><!-- Calligraphy -->
+			<section>
+				<h3>6. Fraktur</h3>
+				<p>Also called Blackletter, for that old-style messages. No numbers or (obviously) no Greek letters in this style, but I've added a “double oblique hyphen“ (⸗) as a replacement for regular hyphens, because without it, it just doesn't look old-style enough.</p>
+				<dl>
+					<dt>Fraktur:</dt>
+					<dd>𝔏𝔬𝔯𝔢𝔪 𝔦𝔭𝔰𝔲𝔪 𝔡𝔬𝔩𝔬𝔯 𝔰𝔦𝔱 𝔄𝔪𝔢𝔱, …</dd>
+					<dt>Fraktur Bold:</dt>
+					<dd>𝕷𝖔𝖗𝖊𝖒 𝖎𝖕𝖘𝖚𝖒 𝖉𝖔𝖑𝖔𝖗 𝖘𝖎𝖙 𝖆𝖒𝖊𝖙, …</dd>
+				</dl>
+			</section><!-- Fraktur -->	
+			<section>
+				<h2>Test Setup:</h2>
+				<p>You can test these functions in the following text field. Please select some text before clicking on any of the buttons below:<br />
+					<textarea cols="50" rows="6" id="source" style="font-face:Consolas,Monaco,'Courier New',monospace">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</textarea><br clear="all" />
+					<button onclick="testReplacement('math-sans-serif');">𝖬𝖺𝗍𝗁 𝖲𝖺𝗇𝗌</button>
+					<button onclick="testReplacement('math-sans-italic');">𝘔𝘢𝘵𝘩 𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤</button>
+					<button onclick="testReplacement('math-sans-bold');">𝗠𝗮𝘁𝗵 𝗦𝗮𝗻𝘀 𝗕𝗼𝗹𝗱</button>
+					<button onclick="testReplacement('math-sans-bold-italic');">𝙈𝙖𝙩𝙝 𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘</button><br />
+					<button onclick="testReplacement('math-serif-italic');">𝑀𝑎𝑡ℎ 𝑆𝑒𝑟𝑖𝑓 𝐼𝑡𝑎𝑙𝑖𝑐</button>
+					<button onclick="testReplacement('math-serif-bold');">𝐌𝐚𝐭𝐡 𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝</button>
+					<button onclick="testReplacement('math-serif-bold-italic');">𝑴𝒂𝒕𝒉 𝑺𝒆𝒓𝒊𝒇 𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄</button><br />
+					<button onclick="testReplacement('math-monospace');">𝙼𝚊𝚝𝚑 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎</button>
+					<button onclick="testReplacement('math-double-struck');">𝕄𝕒𝕥𝕙 𝔻𝕠𝕦𝕓𝕝𝕖-𝕊𝕥𝕣𝕦𝕔𝕜</button><br />
+					<button onclick="testReplacement('math-calligraphy');">ℳ𝒶𝓉𝒽 𝒞𝒶𝓁𝓁𝒾ℊ𝓇𝒶𝓅𝒽𝓎</button>
+					<button onclick="testReplacement('math-calligraphy-bold');">𝓜𝓪𝓽𝓱 𝓒𝓪𝓵𝓵𝓲𝓰𝓻𝓪𝓹𝓱𝔂 𝓑𝓸𝓵𝓭</button><br />
+					<button onclick="testReplacement('math-fraktur');">𝔐𝔞𝔱𝔥 𝔉𝔯𝔞𝔨𝔱𝔲𝔯</button>
+					<button onclick="testReplacement('math-fraktur-bold');">𝕸𝖆𝖙𝖍 𝕱𝖗𝖆𝖐𝖙𝖚𝖗 𝕭𝖔𝖑𝖉</button>
+				</p>
+			</section><!-- TESTS -->
+		</article>
 		<hr />
-		
-		<p><small>&copy; 2016 by Sascha René Leib, all rights reserved.</small></p>
-		
+		<footer>
+			<p><small>&copy; 2016 by Sascha René Leib, all rights reserved.</small></p>
+		</footer>
 		<script language="javascript"><!--
 		
 			function testReplacement(type) {
@@ -418,6 +580,18 @@
 							break;
 						case 'math-double-struck':
 							textToMathDoubleStruck();
+							break;
+						case 'math-calligraphy':
+							textToMathCalligraphy();
+							break;
+						case 'math-calligraphy-bold':
+							textToMathCalligraphyBold();
+							break;
+						case 'math-fraktur':
+							textToMathFraktur();
+							break;
+						case 'math-fraktur-bold':
+							textToMathFrakturBold();
 							break;
 						default:
 					}
