@@ -6,3 +6,5 @@ This is a collection of Bookmarklet scripts that I created for my own use. They 
 Please note that while I try to make them as cross-platform and standard-compliant as possible, I am in fact mostly using Firefox and I rarely test anything on any other browser. If I know about any incompatibilites, I list them below, but it is likely that these lists are not exhaustive.
 
 Regardless of my own testing, all the scripts are provided “as is”, i.e. no guarantees for proper functioning or otherwise are given, and of course I take no responsibility if things go wrong for whatever reason.
+
+On top of my "to-do"-list is still making this a bit more user-friendly to use. For the time being, please grab the "overview.html" page to get started.
