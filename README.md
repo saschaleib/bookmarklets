@@ -27,10 +27,10 @@ The following bookmarklets are include in the current version:
   A collection of bookmarklets to replace standard Latin (or in some cases Greek) characters with formatted of pseudofont variants.
 
   3.1 Standard Character replacements
-  Change text into Sᴍᴀʟʟ Cᴀᴩs, ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ, Ⓒⓘⓡⓒⓛⓔⓓ, ⒫⒜⒭⒠⒩⒯⒣⒠⒮⒤⒮⒠⒟ or Ｆｕｌｌｗｉｔｈ variants.
+    Change text into Sᴍᴀʟʟ Cᴀᴩs, ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ, Ⓒⓘⓡⓒⓛⓔⓓ, ⒫⒜⒭⒠⒩⒯⒣⒠⒮⒤⒮⒠⒟ or Ｆｕｌｌｗｉｔｈ variants.
 
   3.2 Math Pseudofont Substitutions
-  Change text into various Math pseudofont styles from the SMP. E.g. 𝖲𝖺𝗇𝗌, 𝑆𝑒𝑟𝑖𝑓,  𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎, 𝔻𝕠𝕦𝕓𝕝𝕖-𝕊𝕥𝕣𝕦𝕔𝕜, 𝒞𝒶𝓁𝒾ℊ𝓇𝒶𝓅𝒽𝓎 or 𝔉𝔯𝔞𝔨𝔱𝔲𝔯.
+    Change text into various Math pseudofont styles from the SMP. E.g. 𝖲𝖺𝗇𝗌, 𝑆𝑒𝑟𝑖𝑓,  𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎, 𝔻𝕠𝕦𝕓𝕝𝕖-𝕊𝕥𝕣𝕦𝕔𝕜, 𝒞𝒶𝓁𝒾ℊ𝓇𝒶𝓅𝒽𝓎 or 𝔉𝔯𝔞𝔨𝔱𝔲𝔯.
   These characters may not display correctly on all devices. Please use with care!
   
 The easiest way to get started is to download the sample bookmarks file, which you can import into your browser’s bookmarks (best move the folder "Bookmarklets" into your bookmarks toolbar for quick access.
